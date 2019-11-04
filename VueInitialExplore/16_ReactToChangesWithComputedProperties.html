@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueLocalSetup</title>
+    <script src="assets/scripts/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="counter++">Increase</button>
+    &nbsp; | &nbsp;
+    <button v-on:click="counter--">Decrease</button>
+    &nbsp; | &nbsp;
+    <button v-on:click="secondCounter++">Increase Second</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ output() }} | {{ result }}</p>
+</div>
+
+<!--    Vue Script starts here-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            secondCounter: 0
+        },
+        methods: {
+          output: function() {
+              console.log('Method');
+              return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+          }
+        },
+        computed: {
+            result: function() {
+                console.log('Computed');
+                return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

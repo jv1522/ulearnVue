@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueLocalSetup</title>
+    <script src="assets/scripts/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="increaseCounter">Click Me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+</div>
+
+<!--    Vue Script starts here-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            increaseCounter: function() {
+                this.counter++;
+            },
+            updateCoordinates: function(event){
+                this.x = event.clientX;
+                this.y = event.clientY;
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

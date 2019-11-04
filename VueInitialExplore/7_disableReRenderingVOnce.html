@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueLocalSetup</title>
+    <script src="assets/scripts/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+</div>
+
+<!--    Vue Script starts here-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello World!',
+            link: 'http://google.com'
+        },
+        methods: {
+            sayHello: function() {
+                this.title = 'Hello!';
+                return this.title;
+            }
+        }
+    });
+</script>
+</body>
+</html>

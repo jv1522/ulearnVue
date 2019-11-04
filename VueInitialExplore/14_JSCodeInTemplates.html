@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueLocalSetup</title>
+    <script src="assets/scripts/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="increaseCounter(2, $event)">Click Me</button>
+    <button v-on:click="counter++">Click Me</button>
+    <p>{{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
+    <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" v-on:keyup.enter="alertMe">
+    <p>Key Modifiers Link Here: <a href="http://vuejs.org/v2/guide/events.html#Key-Modifiers">VueKeyModifiers</a></p>
+</div>
+
+<!--    Vue Script starts here-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            increaseCounter: function(step, event) {
+                this.counter += step;
+            },
+            updateCoordinates: function(event){
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            alertMe: function(){
+                alert('You typed enter');
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vif</title>
+    <script src="assets/scripts/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-if="show">You can see me!</p>
+    <p v-else>Now you see me!</p>
+    <p>Do you also see me?</p>
+    <template v-if="show">
+<!--        Template can be used if we want to apply v-if to multiple html elements-->
+        <h1>Heading</h1>
+        <p>Inside a template</p>
+    </template>
+    <button @click="show = !show">Switch</button>
+</div>
+
+<!--    Vue Script starts here-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    });
+</script>
+</body>
+</html>
