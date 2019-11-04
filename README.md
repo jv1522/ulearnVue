@@ -1,4 +1,5 @@
 # ulearnvue
+This project demonstrates various aspects of vueJS and is intended to be a good reference to various concepts in vueJS framework.
 
 ## Project setup
 ```
